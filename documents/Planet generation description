@@ -1,0 +1,29 @@
+Planet generation FULL DESCRIPTION
+
+The planet will hold a few variables:
+the seed;
+water amount;
+land amount;
+life amount;
+
+these will be used to generate a scalable planet sprite which will get more detailed as you get closer to the planet or scale it.
+
+as example:
+it has:
+the seed: 2424354254326;
+water amount 6;
+land amount 3;
+life amount 0;
+
+you will get a spite which is mostly blue with only a bit brown.
+
+OR
+
+the seed: same as last;
+water amount 8;
+land amount 6;
+life amount 4;
+
+after the player has teraformed the planet he was able to put life on it and create mountains (high amount off land), deep oceans (high amount off water) and life. this planet will be a bit over half covert in blue, with a bit of white (snow on mountain tops and ice on the poles) and the rest green for forests and grassland.
+as the player gets closer to the land he/she will be able to see a more detailed version of the planet. with the increasing resolution of the planet it will generate the planet again for every resolution change. mountains and flatland will become destingueshable from eachother and with the player close enough animals will appear on the surface. 
+
