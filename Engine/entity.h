@@ -16,11 +16,12 @@ public:
   virtual ~Entity();
   Vector2 position;
   Image *image;
+  Vector2 imageSize;
   double angle;
   int id;
   void setTexture(SDL_Renderer *renderer, std::string name, std::string path);
   void setTexture(Image *image) { this->image = image; }
-  void update(Input *input, float dt);
+  void virtual update(float dt);
   int getId() { return id; }
 
 private:

@@ -44,7 +44,7 @@ public:
   bool operator!=(const Vector2 &oth);
 
   float magnitude() { return sqrt((x * x) + (y * y)); }
-  float getAngle() { return atan2(y, x); }
+  float getAngle() { return atan2(y, x) * 57.2957795; }
   float normalized();
   void normalize();
   void limit(float by);

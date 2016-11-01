@@ -27,9 +27,10 @@ void Renderer::rendererScene(Scene *scene) {
     if (scene->entities[i]->image != NULL &&
         scene->entities[i]->image->image != NULL) {
       SDL_RendererFlip flip = SDL_FLIP_NONE;
-      SDL_Rect *rect =
-          Vector2::toRect(scene->entities[i]->position,
-                          scene->entities[i]->image->getImageSize());
+      Vector2 ImageSize = scene->entities[i]->image->getImageSize();
+      ImageSize.x *= scene->entities[i]->imageSize.x;
+      ImageSize.y *= scene->entities[i]->imageSize.y;
+      SDL_Rect *rect = Vector2::toRect(scene->entities[i]->position, ImageSize);
       SDL_RenderCopyEx(renderer, scene->entities[i]->image->image, NULL, rect,
                        scene->entities[i]->angle, NULL, flip);
     }

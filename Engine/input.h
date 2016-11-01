@@ -7,9 +7,8 @@
 
 class Input {
 public:
-  Input();
   virtual ~Input();
-
+  static Input *getInstance();
   void update();
   bool getKey(int keyCode);
   bool getKeyUp(int keyCode);
@@ -27,6 +26,8 @@ public:
   int window_width, window_height;
 
 private:
+  Input();
+  static Input *instance;
   bool keys[282];
   bool keysUp[282];
   bool keysDown[282];

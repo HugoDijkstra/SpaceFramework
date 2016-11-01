@@ -9,15 +9,18 @@
 
 class ResourceManager {
 public:
-  ResourceManager(SDL_Renderer *renderer);
   virtual ~ResourceManager();
   std::string path = "";
   void addImage(Image *image);
   void removeImage(Image *image);
-
+  static ResourceManager *getInstance();
   Image *getImage(std::string name);
+  void setRenderer(SDL_Renderer *renderer);
+  void loadImages(SDL_Renderer *renderer);
 
 private:
+  ResourceManager();
+  static ResourceManager *instance;
   std::vector<Image *> textures;
 };
 

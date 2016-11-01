@@ -11,6 +11,7 @@ public:
   std::vector<Entity *> entities;
   void addEntity(Entity *entity);
   void removeEntity(Entity *entity);
+  std::vector<Scene *> scenes;
 };
 
 #endif

@@ -84,6 +84,10 @@ add_executable(lsm
 	lsm/entities
 	lsm/entities/planet.cpp
 	lsm/entities/planet.h
+	lsm/entities/spaceship.cpp
+	lsm/entities/spaceship.h
+	lsm/entities/bullet.cpp
+	lsm/entities/bullet.h
 	lsm/core.cpp
 	lsm/particle.cpp
 	lsm/particle.h

@@ -1,4 +1,5 @@
 #include <Engine/input.h>
+Input *Input::instance = NULL;
 Input::Input() {
   this->mustquit = false;
 
@@ -20,6 +21,12 @@ Input::Input() {
 
 Input::~Input() {}
 
+Input *Input::getInstance() {
+  if (Input::instance == NULL) {
+    Input::instance = new Input();
+  }
+  return Input::instance;
+}
 Vector2 Input::getMouseToScreen() { return Vector2(mousePos.x, mousePos.y); }
 
 void Input::update() {
