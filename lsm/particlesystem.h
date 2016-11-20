@@ -1,9 +1,9 @@
 #ifndef PARTICLESYSTEM_H
 #define PARTICLESYSTEM_H
 
-#include <Engine/entity.h>
-#include <Engine/scene.h>
-#include <Engine/vector2.h>
+#include <engine/entity.h>
+#include <engine/scene.h>
+#include <engine/vector2.h>
 #include <lsm/particle.h>
 
 class ParticleSystem : public Entity {

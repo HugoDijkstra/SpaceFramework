@@ -14,7 +14,7 @@ if(UNIX)
 	# valgrind --leak-check=full ./demo
 	# ./demo # creates cmon.out
 	# gprof demo gmon.out > analysis.txt
-set(CMAKE_CXX_FLAGS "-Wall -pg -std=c++11")
+set(CMAKE_CXX_FLAGS "-Wall -pg -std=c++11 -Wsign-compare")
 endif(UNIX)
 
 if(WIN32)
@@ -39,19 +39,19 @@ find_package(SDL2_image REQUIRED)
 add_subdirectory(external)
 
 include_directories(
-  ${CMAKE_SOURCE_DIR}/external/SDL2-2.0.4/include/
-  ${CMAKE_SOURCE_DIR}/Engine/
+  ${CMAKE_SOURCE_DIR}/external/SDL2-2.0.5/include/
+  ${CMAKE_SOURCE_DIR}/engine/
   ${CMAKE_SOURCE_DIR}/.
 )
 
 set(ALL_LIBS
-	Engine
+	engine
 	SDL2
 	${SDL2IMAGE_LIBRARY}
 )
 
 include_directories(
-  /external/SDL2-2.0.4/include
+  /external/SDL2-2.0.5/include
   /external/
 )
 
@@ -63,21 +63,23 @@ add_definitions(
 	-D_CRT_SECURE_NO_WARNINGS
 )
 include_directories(${SDL2_INCLUDE_DIRS} ${SDL2IMAGE_INCLUDE_DIR} ${PROJECT_BINARY_DIR})
-add_library(Engine
-	Engine/entity.cpp
-	Engine/entity.h
-	Engine/image.cpp
-	Engine/image.h
-	Engine/renderer.cpp
-	Engine/renderer.h
-	Engine/resourcemanager.cpp
-	Engine/resourcemanager.h
-	Engine/scene.cpp
-	Engine/scene.h
-	Engine/input.cpp
-	Engine/input.h
-	Engine/vector2.cpp
-	Engine/vector2.h
+add_library(engine
+	engine/entity.cpp
+	engine/entity.h
+	engine/image.cpp
+	engine/image.h
+	engine/renderer.cpp
+	engine/renderer.h
+	engine/resourcemanager.cpp
+	engine/resourcemanager.h
+	engine/scene.cpp
+	engine/scene.h
+	engine/scenemanager.cpp
+	engine/scenemanager.h
+	engine/input.cpp
+	engine/input.h
+	engine/vector2.cpp
+	engine/vector2.h
 )
 
 add_executable(lsm
@@ -93,6 +95,8 @@ add_executable(lsm
 	lsm/particle.h
 	lsm/particlesystem.cpp
 	lsm/particlesystem.h
+	lsm/scenes/mainspace.cpp
+	lsm/scenes/mainspace.h
 )
 
 

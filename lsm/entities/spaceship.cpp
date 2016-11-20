@@ -4,6 +4,7 @@ Spaceship::Spaceship() {
   imageSize = Vector2(0.2f, 0.2f);
   speed = 0.5f;
   velocity = Vector2(0, 0);
+  setTexture(ResourceManager::getInstance()->getImage("SpaceShip"));
 }
 
 Spaceship::~Spaceship() {}
@@ -39,4 +40,4 @@ void Spaceship::update(float dt) {
     position.y = 0;
 }
 
-void Spaceship::shoot() { scene->addEntity(new Bullet(angle, 4)); }
+void Spaceship::shoot() { scene->addEntity(new Bullet(this, 200)); }

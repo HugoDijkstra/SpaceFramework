@@ -9,7 +9,7 @@ add_definitions(
   -D_CRT_SECURE_NO_WARNINGS
 )
 
-add_subdirectory(SDL2-2.0.4)
+add_subdirectory(SDL2-2.0.5)
 
 include_directories(
   ${SDL_INCLUDE_DIR}

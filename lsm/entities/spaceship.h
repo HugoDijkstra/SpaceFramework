@@ -1,8 +1,8 @@
 #ifndef SPACESHIP_H
 #define SPACESHIP_H
 
-#include <Engine/entity.h>
-#include <Engine/scene.h>
+#include <engine/entity.h>
+#include <engine/scene.h>
 #include <lsm/entities/bullet.h>
 class Spaceship : public Entity {
 public:

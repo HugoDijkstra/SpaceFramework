@@ -1,8 +1,8 @@
 #ifndef PARTICLE_H
 #define PARTICLE_H
 
-#include <Engine/entity.h>
-#include <Engine/scene.h>
+#include <engine/entity.h>
+#include <engine/scene.h>
 
 class Particle : public Entity {
 public:
