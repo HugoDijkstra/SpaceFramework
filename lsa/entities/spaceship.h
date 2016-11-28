@@ -3,7 +3,7 @@
 
 #include <engine/entity.h>
 #include <engine/scene.h>
-#include <lsm/entities/bullet.h>
+#include <lsa/entities/bullet.h>
 class Spaceship : public Entity {
 public:
   Spaceship();

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.6)
-project(lsm)
+project(lsa)
 
 set(Gl_VERSION_MAJOR 1)
 set(Gl_VERSION_MINOR 0)
@@ -14,7 +14,7 @@ if(UNIX)
 	# valgrind --leak-check=full ./demo
 	# ./demo # creates cmon.out
 	# gprof demo gmon.out > analysis.txt
-set(CMAKE_CXX_FLAGS "-Wall -pg -std=c++11 -Wsign-compare")
+set(CMAKE_CXX_FLAGS "-Wall -pg -std=c++11 -Wsign-compare -g")
 endif(UNIX)
 
 if(WIN32)
@@ -82,22 +82,27 @@ add_library(engine
 	engine/vector2.h
 )
 
-add_executable(lsm
-	lsm/entities
-	lsm/entities/planet.cpp
-	lsm/entities/planet.h
-	lsm/entities/spaceship.cpp
-	lsm/entities/spaceship.h
-	lsm/entities/bullet.cpp
-	lsm/entities/bullet.h
-	lsm/core.cpp
-	lsm/particle.cpp
-	lsm/particle.h
-	lsm/particlesystem.cpp
-	lsm/particlesystem.h
-	lsm/scenes/mainspace.cpp
-	lsm/scenes/mainspace.h
+add_executable(lsa
+	lsa/entities
+	lsa/entities/planet.cpp
+	lsa/entities/planet.h
+	lsa/entities/spaceship.cpp
+	lsa/entities/spaceship.h
+	lsa/entities/bullet.cpp
+	lsa/entities/bullet.h
+	lsa/core.cpp
+	lsa/particle.cpp
+	lsa/particle.h
+	lsa/particlesystem.cpp
+	lsa/particlesystem.h
+	lsa/scenes/mainspace.cpp
+	lsa/scenes/mainspace.h
 )
 
 
-target_link_libraries(lsm ${ALL_LIBS})
+target_link_libraries(lsa ${ALL_LIBS})
+
+file(
+	COPY assets
+	DESTINATION ${CMAKE_BINARY_DIR}
+)

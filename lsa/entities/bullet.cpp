@@ -4,7 +4,7 @@ Bullet::Bullet(double angle, float speed) {
   this->angle = angle;
   this->speed = speed;
   setTexture(ResourceManager::getInstance()->getImage("Laser"));
-  imageSize = Vector2(0.05f, 0.05f);
+  size = Vector2(0.05f, 0.05f);
 }
 
 Bullet::Bullet(Entity *ship, float speed) {
@@ -12,7 +12,7 @@ Bullet::Bullet(Entity *ship, float speed) {
   this->speed = speed;
   this->position = ship->position;
   setTexture(ResourceManager::getInstance()->getImage("Laser"));
-  imageSize = Vector2(0.05f, 0.05f);
+  size = Vector2(0.05f, 0.05f);
 }
 
 Bullet::~Bullet() {}

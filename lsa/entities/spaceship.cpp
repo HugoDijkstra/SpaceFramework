@@ -1,7 +1,7 @@
 #include "spaceship.h"
 
 Spaceship::Spaceship() {
-  imageSize = Vector2(0.2f, 0.2f);
+  size = Vector2(0.2f, 0.2f);
   speed = 0.5f;
   velocity = Vector2(0, 0);
   setTexture(ResourceManager::getInstance()->getImage("SpaceShip"));
@@ -19,6 +19,7 @@ void Spaceship::update(float dt) {
   }
 
   if (input->getKeyDown(32)) {
+    std::cout << "Shoot" << std::endl;
     shoot();
   }
 
@@ -26,6 +27,12 @@ void Spaceship::update(float dt) {
     Vector2 forward = Vector2(cos((angle - 90) * 0.0174532925f),
                               sin((angle - 90) * 0.0174532925f));
     Vector2 acc = forward * speed;
+    velocity += acc * dt;
+  }
+  if (input->getKey(115)) {
+    Vector2 forward = Vector2(cos((angle - 90) * 0.0174532925f),
+                              sin((angle - 90) * 0.0174532925f));
+    Vector2 acc = forward * -speed;
     velocity += acc * dt;
   }
   position -= velocity;
